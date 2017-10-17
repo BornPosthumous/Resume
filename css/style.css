@@ -1,0 +1,194 @@
+* {
+  font-family: "Monospace";
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#wrapper {
+  background-color: grey;
+  padding: 10px;
+}
+
+#skills {
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: row wrap;
+      flex-wrap: row wrap;
+}
+
+#technologies {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  min-height: 15em;
+  background-color: #212121;
+  border-radius: 0.25em;
+  padding: 10px;
+}
+#technologies:before {
+  content: "[";
+  margin: 10px;
+  color: #98C379;
+}
+#technologies:after {
+  content: "]";
+  margin: 10px;
+  color: #98C379;
+}
+#technologies ul {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  font-size: 0.75em;
+}
+#technologies ul li {
+  padding: 10px;
+}
+#technologies ul li:before {
+  content: "\"";
+}
+#technologies ul li:after {
+  content: "\",";
+}
+
+#education {
+  min-height: 15em;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  background-color: #282C34;
+  color: #282C34;
+  border-radius: 0.25em;
+  padding: 10px;
+}
+
+h3 {
+  color: #98C379;
+}
+
+h4 {
+  color: #CF6572;
+}
+
+.curly {
+  color: #98C379;
+}
+
+#heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #212121;
+  padding: 10px;
+  border-radius: 0.25em;
+}
+
+#contact-card ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#contact-card ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#contact-card ul li span.key {
+  font-weight: bold;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+}
+#contact-card ul li span.colon {
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+}
+#contact-card ul li span.val {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+#contact-card h1, #contact-card h2, #contact-card h3 {
+  text-indent: 1em;
+}
+
+.colon {
+  color: #98C379;
+}
+.colon:after {
+  content: " : ";
+}
+
+.key {
+  color: #CF6572;
+}
+
+.key, .colon {
+  font-size: 0.75em;
+}
+
+.val:before {
+  content: " \" ";
+}
+.val:after {
+  content: " \" ";
+}
+
+#contact-card {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  margin: auto;
+  padding: 10px;
+}
+
+#blurb {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  font-size: 0.75em;
+  line-height: 120%;
+  margin: auto;
+  height: 100%;
+  text-align: justify;
+}
+#blurb:before {
+  content: "\"\"\"";
+  color: #98C379;
+}
+#blurb:after {
+  content: "\"\"\"";
+  color: #98C379;
+}
+#blurb p {
+  text-indent: 1em;
+  padding: 0em 1em;
+}
