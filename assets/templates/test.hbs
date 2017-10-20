@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	      <meta charset="utf-8">
+	      <title>Jeffrey Rivera - Resume</title>
+	      <link rel="stylesheet" href="./static/stylesheets/style.css">
+	      <!--[if IE]>
+		        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	      <![endif]-->
+    </head>
+    <body id="home">
+        <div id="wrapper">
+            <section id="heading">
+                <section id="contact-card">
+                    <span class="curly"> { </span>
+                    <ul>
+                        {{#each contactInfo}}
+                            <li>
+                                <span class="key"> {{@key}} </span>
+                                <span class="colon"></span>
+                                <span class="val"> {{ this  }}</span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <span class="curly"> } </span>
+                </section>
+
+                <section id="blurb">
+                    <p>{{blurb}}</p>
+                </section>
+            </section>
+            <div id="skills">
+                <section id="education">
+                    <h3 class="array-obj-start">education :</h3>
+                    {{#each education}}
+                        <section class="">
+                            <ul class=" {{#if @index}} arr-obj-end {{else}} obj-continue{{/if}}">
+                            <li>
+                                <span class="key">school</span>
+                                <span class="colon"></span>
+                                <span class="val">{{this.school}}</span>
+                            </li>
+                            <li>
+                                <span class="key">date</span>
+                                <span class="colon"></span>
+                                <span class="val">{{this.graduationDate}}</span>
+                            </li>
+                            <li>
+                                <span class="key">degree</span>
+                                <span class="colon"></span>
+                                <span class="val">{{this.degree}}</span>
+                            </li>
+                            <li class="course-work">
+                                <span class="key">relevant </br>coursework</span>
+                            <span class="colon"></span>
+                            <span style="flex-basis: 80%;">
+                                {{#each this.courseWork}}
+                                    <span class="quotes">{{this}}</span>
+                            </br>
+                                {{/each}}
+                            </span>
+                            </li>
+                            </ul>
+                        </section>
+                    {{/each}}
+                </section>
+                <section id="technologies-container">
+                    <div id="technologies" class="obj-end">
+                    <h3 class="obj-start"> technologies : </h3>
+                    {{#each skills}}
+                        <div class="pad-left">
+                            <h4> {{this.type }} : </h4>
+                                <ul class="{{#if @index}} last-arr {{/if}}">
+                                    {{#each skills}}
+                                        <li>{{this}}</li>
+                                    {{/each}}
+                                </ul>
+                        </div>
+                    {{/each}}
+                    </div>
+                </section>
+            </div>
+            <div id="work-experience-container">
+            <section>
+                <h2>Selected Work Experience</h2>
+                {{#each work}}
+                    <section class="work-experience">
+                        <div class="heading array">
+                        <h3>{{this.company}}</h3>
+                        <h4>{{this.title}}</h4>
+                        <h3> {{this.dates.start}} - {{this.dates.end}} </h3>
+                        </div>
+                        <!-- <h5> experiences: </h5> -->
+                        <ul class="experiences">
+                        {{#each this.skills}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                        </ul>
+                        <ul class="array skills">
+                            {{#each this.technologies}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </section>
+                {{/each}}
+            </section>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "Resume",
+  "version": "1.0.0",
+  "description": "Resume Test",
+  "main": ".#gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-coffee": "^2.3.4",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-define-module": "^0.1.5",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BornPosthumous/Resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BornPosthumous/Resume/issues"
+  },
+  "homepage": "https://github.com/BornPosthumous/Resume#readme"
+}

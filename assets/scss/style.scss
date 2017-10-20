@@ -1,0 +1,317 @@
+// Solarized : http://simianuprising.com/wp-content/uploads/2012/08/solarized-reference-horizontal.png
+$base03      : #002b36 ;
+$base02      : #073642 ;
+$base01      : #586e75 ;
+$base00      : #657b83 ;
+$base0       : #839496 ;
+$base1       : #93a1a1 ;
+$base2       : #eee8d5 ;
+$base3       : #fdf6e3 ;
+$yellow      : #b58900 ;
+$orange      : #cb4b16 ;
+$red         : #dc322f ;
+$magenta     : #d33682 ;
+$violet      : #6c71c4 ;
+$blue        : #268bd2 ;
+$cyan        : #2aa198 ;
+$green       : #859900 ;
+/* $primary     : #282C34 ; */
+$primary     : $base03 ;
+$secondary   : #90B2BF ;
+$tertiary    : #98C379 ;
+$quad        : #CF6572 ;
+$quint       : #6c71c4 ;
+$black-1     : #212121 ;
+
+$black-1     : $base03;
+
+// Layout
+$padding     : 10px   ;
+$radius      : 0.25em ;
+$indent      : 1em    ;
+
+$border      : 1px solid $secondary ;
+
+// Font
+$primaryFont : Monaco;
+
+*  { font-family: $primaryFont;
+     color: $base3;
+     font-size: 11px;}
+ul { list-style-type: none; }
+@mixin flip(){
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+@mixin array-container( ) {
+    &:before { content: '['; margin: 0px; color: $tertiary; }
+    &:after  { content: ']'; margin: 0; color: $tertiary; }
+}
+@mixin array-start(){
+    &:after { content: '['; margin: $padding /2; color: $tertiary; }
+}
+@mixin array-end(){
+    &:after { content: ']'; margin: $padding /2; color: $tertiary; }
+}
+@mixin array-obj-start(){
+    &:after { content: '[ { '; margin: $padding /2; color: $tertiary; }
+}
+@mixin array-obj-end(){
+    &:after { content: ' } ] '; margin: $padding /2; color: $tertiary; }
+}
+@mixin object-container(  ) {
+    &:before { content: '{'; margin: $padding; color: $tertiary; }
+    &:after  { content: "}"; margin: $padding; color: $tertiary; @include flip;}
+}
+@mixin object-start(){
+    &:after  { content: "{"; margin: $padding; color: $tertiary; }
+}
+@mixin object-end(){
+    &:after  { content: "}"; margin: $padding; color: $tertiary; font-size: 9px;}
+}
+@mixin object-continue(){
+    &:after  { content: "},{"; margin: $padding; color: $tertiary; font-size: 9px;}
+}
+@mixin quotes(){
+    &:before { content: "\" "; color: $base00;}
+    &:after  { content: " \","; color: $base00;}
+    &:last-child:after { content : " \""; }
+}
+ul.obj-continue {
+    &:after{ content: "},{"; margin: $padding 0px; color: $tertiary; font-size: 0.75em;}
+}
+#wrapper, html, body { background-color: $base0; }
+#wrapper{  padding: $padding; max-width: 800px; margin: auto;}
+.obj-start { @include object-start(); }
+.obj-end { @include object-end(); }
+.arr-obj-end {  &:after  { content: "} ]"; margin: $padding 0px; color: $tertiary; font-size: 9px;}
+ }
+.array{ @include array-container();}
+.obj { @include object-container(); }
+.array-start { @include array-start(); }
+.array-end { @include array-end(); }
+.array-obj-start { @include array-obj-start(); }
+.array-obj-end { @include array-obj-end(); &:last-child:after{ content: "kjaf" !important;} }
+.quotes { @include quotes(); }
+#skills {
+    margin: 0px;
+    margin-top: $padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: row wrap;
+}
+.pad-left { padding-left: $padding * 2; }
+#technologies-container{
+    display:flex;
+    height: 295px;
+    background-color: $black-1;
+    border-radius: $radius;
+    padding: $padding;
+    flex-basis: 45%;
+    align-items: center;
+    justify-content: center;
+}
+#technologies{
+
+  h3{ font-size: 0.75em}
+  h4 {
+      font-size: 0.75em;
+      text-transform: lowercase;
+      margin: 0px;
+      padding: 0px;
+  }
+  ul {
+    margin: 0px $padding;
+    display: flex;
+    padding: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    line-height: 20px;
+    &:after { content: "\] , ";  color: $green; }
+    &:before { content: "\[ "; color: $green; }
+
+    li {
+        font-size: 9px;
+        padding: 0px $padding/3;
+        color: $base3;
+        @include quotes();
+       }
+  }
+}
+ul.last-arr {
+    &:after { content: "\]" !important;  }
+}
+#education {
+  flex-basis: 47.5%;
+  background-color: $primary;
+  color: $primary;
+  border-radius: $radius;
+  padding: $padding;
+
+  h3, h4, h5, h6 { margin: $padding 0px;}
+  h3{ font-size: 0.75em}
+
+  h4 {
+      color: $blue;
+      font-size: 1em;
+      text-transform: lowercase;
+  }
+  h5 { color: $magenta; }
+  ul {
+      padding: 0px;
+      padding-left: $padding;
+      display: flex;
+      flex-direction: column;
+      li {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          span.key {
+              font-weight: bold;
+              flex-basis: 15%;
+          }
+          span.colon {
+              flex-basis: 5%;
+          }
+          span.val {
+              flex-basis: 80%;
+          }
+      }
+      li.course-work { margin-top: 10px; }
+  }
+}
+
+h3 {
+  color: $tertiary;
+}
+h4 {
+  color: $quad;
+}
+.curly{
+  color: $tertiary;
+}
+#heading {
+  display: flex;
+  background-color: $black-1;
+  padding: $padding;
+  border-radius: $radius;
+}
+#contact-card {
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      span.key {
+        font-weight: bold;
+        flex-basis: 15%;
+      }
+      span.colon {
+        flex-basis: 5%;
+      }
+      span.val {
+        flex-basis: 80%;
+      } 
+    }
+  }
+  h1 , h2 , h3 {
+     text-indent: $indent;
+  }
+}
+.colon {
+  color: $tertiary;
+  &:after{
+      content: " : ";
+      color: $base2;
+  }
+}
+.key {
+  color: $quad;
+}
+.key, .colon {
+  font-size: 0.75em;
+}
+.val {
+    @include quotes();
+}
+
+#contact-card {
+  flex-basis: 60%;
+  margin: auto;
+  padding: 10px;
+}
+
+#blurb {
+  flex-basis: 60%;
+  margin: auto;
+  height: 100%;
+  text-align: justify;
+  &:before { content: "\"\"\""; color: $tertiary; }
+  &:after  { content: "\"\"\""; color: $tertiary; }
+  p {
+    text-indent: 1em ;
+    padding: 0em 1em ;
+    font-size: 0.75em;
+    line-height: 1.6;
+  }
+}
+#work-experience-container {
+    margin-top: $padding;
+    background-color: $black-1;
+    border-radius: $radius;
+    padding: $padding;
+    display: flex;
+    flex-flow: row;
+
+    h2{ width: 100%;}
+    .heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: $padding;
+        h2,h3,h4 { @include quotes(); margin: 0px; padding: $padding/3;}
+    }
+    ul.experiences {
+        margin: $padding;
+        display: flex;
+        padding: 0px;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-end;
+        line-height: 20px;
+        li {
+            padding-left: 2em;
+            text-indent: -1em;
+            color: $base3;
+            @include quotes();
+        }
+    }
+    ul.skills {
+        margin: 0px $padding;
+        display: flex;
+        padding-left: $padding;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-end;
+        font-size: 0.75em;
+        line-height: 20px;
+        li {
+            padding: 0px;
+            font-size: 9px;
+            color: $base3;
+            @include quotes();
+        }
+        li:first-child { padding-left: 5px; }
+        li:last-child { padding-right: 5px; }
+    }
+}
