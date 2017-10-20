@@ -24,12 +24,14 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: row wrap;
-      flex-wrap: row wrap;
+  -webkit-flex-wrap: row wrap;
+  flex-wrap: row wrap;
 }
 
 #technologies {
   -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  -webkit-flex-basis: 70%;
+  flex-basis: 70%;
   min-height: 15em;
   background-color: #212121;
   border-radius: 0.25em;
@@ -73,7 +75,8 @@ ul {
 #education {
   min-height: 15em;
   -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -webkit-flex-basis: 25%;
+  flex-basis: 25%;
   background-color: #282C34;
   color: #282C34;
   border-radius: 0.25em;
@@ -128,15 +131,17 @@ h4 {
 #contact-card ul li span.key {
   font-weight: bold;
   -ms-flex-preferred-size: 15%;
+  -webkit-flex-basis: 15%;
       flex-basis: 15%;
 }
 #contact-card ul li span.colon {
   -ms-flex-preferred-size: 5%;
-      flex-basis: 5%;
+  flex-basis: 5%;
+  -webkit-flex-basis: 5%;
 }
 #contact-card ul li span.val {
   -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
+  -webkit-flex-basis: 80%;
 }
 #contact-card h1, #contact-card h2, #contact-card h3 {
   text-indent: 1em;
@@ -165,7 +170,8 @@ h4 {
 }
 
 #contact-card {
-  -ms-flex-preferred-size: 60%;
+    -ms-flex-preferred-size: 60%;
+    -webkit-flex-basis: 60%;
       flex-basis: 60%;
   margin: auto;
   padding: 10px;
